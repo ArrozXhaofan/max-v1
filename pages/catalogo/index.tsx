@@ -1,7 +1,12 @@
 import { Card, Navigator } from '@/components'
 import { Routes } from '@/models'
 import React from 'react'
-import { Maquina } from './models'
+
+interface Maquina {
+  ID: number;
+  MODELO: string;
+  IMAGEN: string;
+}
 
 function Catalogo({data}:any) {
 

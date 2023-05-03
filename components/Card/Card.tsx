@@ -1,4 +1,9 @@
-import { Maquina } from "@/pages/catalogo/models"
+interface Maquina {
+    ID: number;
+    MODELO: string;
+    IMAGEN: string;
+  }
+
 import Link from "next/link"
 
 interface Props{
