@@ -1,6 +1,10 @@
-import { Navigator } from '@/components'
+import { Footer, Navigator } from '@/components'
 import { Routes } from '@/models'
 import React from 'react'
+
+import 'aos/dist/aos.css';
+import Aos from "aos";
+Aos.init()
 
 function Home() {
   return (
@@ -9,8 +13,10 @@ function Home() {
       <Navigator pathnames={[Routes.HOME, Routes.CONTACTO, Routes.CATALOGO]} />
       
       
-      
-      </div>
+
+      <Footer/>
+
+    </div>
   )
 }
 

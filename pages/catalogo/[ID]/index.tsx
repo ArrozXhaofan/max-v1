@@ -12,9 +12,6 @@ function index({data}:any) {
         
         <Navigator pathnames={[Routes.HOME, Routes.CONTACTO, Routes.CATALOGO]} />
 
-        {/* {
-            datos.MODELO
-        } */}
         <div className='pt-20'>
             {datos.id}
         </div>

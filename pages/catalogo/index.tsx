@@ -1,6 +1,6 @@
-import { Card, Navigator } from '@/components'
+import { Card, Footer, Navigator } from '@/components'
 import { Routes } from '@/models'
-import React from 'react'
+import React, { useState } from 'react'
 
 interface Maquina {
   ID: number;
@@ -8,10 +8,12 @@ interface Maquina {
   IMAGEN: string;
 }
 
+
 function Catalogo({data}:any) {
 
   const maquinas:Maquina[] = data
 
+ 
   return (
     <div className='min-h-screen bg-gray-200'>
         
@@ -46,7 +48,15 @@ function Catalogo({data}:any) {
             <Card key={maquina.ID} data={maquina} />
           ))
         }
+
+        <p>
+          
+        </p>
+
+
       </div>
+
+      <Footer/>
     
     </div>
  

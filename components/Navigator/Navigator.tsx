@@ -10,7 +10,7 @@ interface Props{
 function Navbar({pathnames}:Props) {
   return (
 
-    <nav className='font-montserrat  z-50 bg-opacity-20 backdrop-filter backdrop-blur-lg  w-full h-14 bg-neutral-100 shadow-md fixed flex items-center p-5
+    <nav className='font-montserrat  z-50 bg-opacity-20 backdrop-filter backdrop-blur-lg  w-full h-14 bg-maxwhite-0 shadow-md fixed flex items-center p-5
     justify-between'>
 
         <div className="">

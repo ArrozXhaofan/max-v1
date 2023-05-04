@@ -10,12 +10,13 @@ module.exports = {
       colors:{
         primary:['#F39325'],
         maxBlack:['#161617'],
+        maxwhite:['#ECECEC']
 
       },
       fontFamily:{
         montserrat:['Montserrat']
-      }
-    },
+      },
+  }
   },
   plugins: [],
 }
