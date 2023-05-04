@@ -2,9 +2,7 @@ import { Footer, Navigator } from '@/components'
 import { Routes } from '@/models'
 import React from 'react'
 
-import 'aos/dist/aos.css';
-import Aos from "aos";
-Aos.init()
+
 
 function Home() {
   return (
