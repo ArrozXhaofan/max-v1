@@ -3,9 +3,9 @@ import Layout from '../Layout'
 
 function Dtf() {
   return (
-    <Layout>
-        <div>Dtf</div>
-    </Layout>
+    <div>
+      sdas
+    </div>
     
   )
 }
