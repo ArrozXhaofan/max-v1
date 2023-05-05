@@ -1,6 +1,6 @@
 "use client";
 
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import { Footer, Navigator } from "@/components";
 import { Routes } from "@/models";
 import { RxChevronRight } from "react-icons/rx";
@@ -8,38 +8,40 @@ import { FaFacebookF } from "react-icons/fa";
 import { BsInstagram } from "react-icons/bs";
 import { motion } from "framer-motion";
 
-import 'aos/dist/aos.css';
+import "aos/dist/aos.css";
 import AOS from "aos";
 
-
-
 function Contacto() {
-   
-    useEffect(() => {
-        AOS.init()
-      }, []);
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
     <div className="overflow-hidden relative min-h-screen">
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+      <Navigator pathnames={[Routes.HOME, Routes.CATALOGO]} />
 
-      <Navigator  pathnames={[Routes.HOME, Routes.CATALOGO]} />
-
-        <div className="absolute translate-x-[180px] -translate-y-250px right-0]
-      md:translate-x-[600px] -z-10">
+      <div
+        className="absolute translate-x-[180px] -translate-y-250px right-0]
+      md:translate-x-[600px] -z-10"
+      >
         <motion.div
-        animate={{ y: [-10, -5, -10],x:[80],rotate:[100,101,100] }} // define la animación para el movimiento vertical
-        transition={{ duration: 2, repeat: Infinity }}
-        className="h-[1000px] w-[1000px]  bg-primary-0 "
-      ></motion.div>
-        </div>
-      
+          animate={{ y: [-10, -5, -10], x: [80], rotate: [100, 101, 100] }} // define la animación para el movimiento vertical
+          transition={{ duration: 2, repeat: Infinity }}
+          className="h-[1000px] w-[1000px]  bg-primary-0 "
+        ></motion.div>
+      </div>
 
       <div className="flex justify-center items-center lg:h-[90vh]">
         <div className="pt-20 max-w-4xl ">
           <div className="flex justify-center">
-            <h1 data-aos="fade-up" className="font-montserrat font-bold text-5xl">CONTACTO</h1>
+            <h1
+              data-aos="fade-up"
+              className="font-montserrat font-bold text-5xl"
+            >
+              CONTACTO
+            </h1>
           </div>
 
           <div className="lg:px-28">
@@ -74,25 +76,39 @@ function Contacto() {
                 <hr className="bg-black w-full h-[3px] my-2" />
 
                 <div className="flex px-10 pt-5 justify-center gap-8 text-7xl">
-                  <a href="https://www.facebook.com/MmaxxPrinters" target="_blank" 
-                  className="hover:opacity-70 hover:scale-105 duration-300">
+                  <a
+                    href="https://www.facebook.com/MmaxxPrinters"
+                    target="_blank"
+                    className="hover:opacity-70 hover:scale-105 duration-300"
+                  >
                     <FaFacebookF />
                   </a>
 
-                  <a href="https://www.instagram.com/mmaxxprinters/" target="_blank" 
-                  className="hover:opacity-70 hover:scale-105 duration-300">
+                  <a
+                    href="https://www.instagram.com/mmaxxprinters/"
+                    target="_blank"
+                    className="hover:opacity-70 hover:scale-105 duration-300"
+                  >
                     <BsInstagram />
                   </a>
                 </div>
               </div>
 
-              <div></div>
+              <div className="flex items-center pt-14 h-full">
+
+                <div className="w-full">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d820.2618841915946!2d-77.03628735365162!3d-12.054178469966438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8c7b16b280f%3A0x72f7a132935900c7!2sJr.%20Pachitea%20126%2C%20Lima%2015001!5e0!3m2!1ses!2spe!4v1683329996461!5m2!1ses!2spe"
+                  className="h-full w-full"
+                ></iframe>
+                </div>
+                
+              </div>
             </div>
           </div>
         </div>
       </div>
       <Footer />
-
     </div>
   );
 }

@@ -1,86 +1,81 @@
-import { Card, Footer, Navigator } from '@/components'
-import { Routes } from '@/models'
-import React, { useState } from 'react'
+"use client";
 
-interface Maquina {
-  ID: number;
-  MODELO: string;
-  IMAGEN: string;
-}
+import React,{useEffect} from "react";
+import { Footer, Navigator } from "@/components";
+import { Routes } from "@/models";
+
+import Referencia from '../../public/images/printer.png'
+
+import 'aos/dist/aos.css';
+import AOS from "aos";
+import Image from "next/image";
 
 
-function Catalogo({data}:any) {
 
-  const maquinas:Maquina[] = data
+function Contacto() {
+   
+    useEffect(() => {
+        AOS.init()
+      }, []);
 
- 
   return (
-    <div className='min-h-screen bg-gray-200'>
+    <div className="overflow-hidden relative h-screen font-montserrat">
+
+      <Navigator  pathnames={[Routes.HOME, Routes.CATALOGO]} />
+
+        <div className="pt-20 pl-3">
+          <h1 className="text-xl font-semibold text-primary-0
+            lg:text-2xl">
+            ¿QUE ESTAS BUSCANDO?
+          </h1>
+        </div>
+
+
+
+        <div className="pt-7 px-9 md:px-44 lg:px-20 lg:h-[60vh] lg:flex items-center">
         
-        <Navigator pathnames={[Routes.HOME, Routes.CONTACTO]} />
-        
-        <h1 className='font-semibold text-primary-0 pt-20 pb-5 px-2 text-xl'>
-        ¿QUE ESTAS BUSCANDO?
-      </h1>
+          <div className="grid lg:grid-cols-3 gap-y-10 lg:gap-x-10 w-full">
 
-      {/* INDICE */}
-      <div className='px-0.5 text-white flex gap-4 flex-wrap'>
-        <button className='bg-white text-primary-0 border border-primary-0 py-1 rounded-full w-44
-        hover:bg-primary-0 hover:text-white duration-300 hover:border-white'>
-          SUBLIMADORAS
-        </button>
+            {/* Carta */}
+            <div className="border border-primary-0 flex flex-col items-center pt-4 px-7 
+            rounded-lg gap-y-2 pb-7">
+              <Image src={Referencia} alt="Imagen" width={100} height={100} 
+              className="w-full"/>
+              <p className="text-primary-0 text-xl">
+                SUBLIMACIÓN
+              </p>
+            </div>
 
-        <button className='bg-white text-primary-0 border border-primary-0 py-1 rounded-full w-44
-        hover:bg-primary-0 hover:text-white duration-300 hover:border-white'>
-          DTF
-        </button>
+            <div className="border border-primary-0 flex flex-col items-center pt-4 px-7 
+            rounded-lg gap-y-2 pb-7">
+              <Image src={Referencia} alt="Imagen" width={100} height={100} 
+              className="w-full"/>
+              <p className="text-primary-0 text-xl">
+                SUBLIMACIÓN
+              </p>
+            </div>
 
-        <button className='bg-white text-primary-0 border border-primary-0 py-1 rounded-full w-44
-        hover:bg-primary-0 hover:text-white duration-300 hover:border-white'>
-          ECOSOLVENTES
-        </button>
-      </div>
+            <div className="border border-primary-0 flex flex-col items-center pt-4 px-7 
+            rounded-lg gap-y-2 pb-7">
+              <Image src={Referencia} alt="Imagen" width={100} height={100} 
+              className="w-full"/>
+              <p className="text-primary-0 text-xl">
+                SUBLIMACIÓN
+              </p>
+            </div>
 
-      <div>
-        {
-          maquinas.map(maquina => (
 
-            <Card key={maquina.ID} data={maquina} />
-          ))
-        }
+          </div>
 
-        <p>
           
-        </p>
 
 
-      </div>
+        </div>
 
-      <Footer/>
-    
+      <Footer />
+
     </div>
- 
-  )
+  );
 }
-export default Catalogo
 
-
-export async function getStaticProps(){
-  
-  try {
-    
-    const res = await fetch('https://apimaxv2.apexmaicol.online/VPsublimacion/')
-    const data = await res.json()
-
-    return{
-      props:{
-        data:data
-      }
-    }
-
-  } catch (error) {
-    console.log(error);
-    
-  }
-
-}
+export default Contacto;
